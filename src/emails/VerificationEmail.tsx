@@ -17,10 +17,6 @@ import {
     verificationCode?: string;
   }
   
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "";
-  
   export default function VerificationEmail({
     firstName,
     verificationCode = "596853",
@@ -34,14 +30,14 @@ import {
             <Section style={coverSection}>
               <Section style={imageSection}>
                 <Img
-                  src={`${baseUrl}/static/aws-logo.png`}
-                  width="75"
-                  height="45"
+                  src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ0nrFQLVifp5r5SMnJPbea02SBR4xpYlv9Q&s`}
+                  width="200"
+                  height="100"
                   alt="AWS's Logo"
                 />
               </Section>
               <Section style={upperSection}>
-                <Heading style={h1}>Hi ${firstName}, Verify your email address</Heading>
+                <Heading style={h1}>Hi {firstName}, Verify your email address</Heading>
                 <Text style={mainText}>
                   Thanks for starting the new your account creation process. We
                   want to make sure it&apos;s really you. Please enter the following
