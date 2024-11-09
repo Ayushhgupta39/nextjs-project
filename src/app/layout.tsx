@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import { DotGothic16 } from 'next/font/google'
+
+const doto = DotGothic16({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Next Full stack App",
@@ -16,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AuthProvider>
-        <body className={`antialiased`}>
+        <body className={`antialiased ${doto.className}`}>
           {children}
           <Toaster />
         </body>
